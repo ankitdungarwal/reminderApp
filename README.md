@@ -9,3 +9,4 @@ recurring cost; new
 money availability reminder; new
 connect with bank api; new
 notification sender; new
+everyday reminder; new
