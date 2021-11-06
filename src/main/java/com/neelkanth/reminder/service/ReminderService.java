@@ -22,6 +22,12 @@ public class ReminderService {
         return object.orElse(List.of(new Reminder()));
     }
 
+    public List<Reminder> fetchAllReminders()
+    {
+        Optional<List<Reminder>> objects = Optional.of(reminderRepository.findAll());
+        return objects.orElse(List.of(new Reminder()));
+    }
+
     public Reminder createEntry(Reminder remind)
     {
         Reminder response = reminderRepository.save(remind);
