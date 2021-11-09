@@ -17,7 +17,7 @@ class ReactList extends Component{
   }
 
   async remove(id){
-    await fetch(`/reminder/remove/${id}`,{
+    await fetch(`/reminder/byId/${id}`,{
       method: 'DELETE',
       headers:{
         'Accept': 'application/json',

@@ -53,6 +53,6 @@ public class ReminderService {
 
     private Reminder findById(Long id)
     {
-        return reminderRepository.getById(id);
+        return reminderRepository.findById(id).get();
     }
 }
