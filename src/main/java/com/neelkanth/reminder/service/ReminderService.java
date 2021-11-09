@@ -34,4 +34,25 @@ public class ReminderService {
         Optional<Reminder> hold = Optional.of(response);
         return hold.orElse(new Reminder());
     }
+
+    public Reminder removeEntry(Long id)
+    {
+        Reminder response = findById(id);
+        reminderRepository.delete(response);
+        return response;
+    }
+
+    public Reminder updateById(Long id, Reminder object)
+    {
+        Reminder response = findById(id);
+        response.setUpdateDate(object.getUpdateDate());
+        response.setName(object.getName());
+        response.setTriggerDate(object.getTriggerDate());
+        return reminderRepository.save(response);
+    }
+
+    private Reminder findById(Long id)
+    {
+        return reminderRepository.getById(id);
+    }
 }

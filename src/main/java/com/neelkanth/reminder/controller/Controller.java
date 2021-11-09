@@ -44,4 +44,26 @@ public class Controller {
         log.info("new reminder id is {}", reminders.getId());
         return ResponseEntity.ok(reminders);
     }
+
+    @DeleteMapping("/byId/{id}")
+    public ResponseEntity<Reminder> deleteById(@PathVariable Long id)
+    {
+        log.info("trying remove entry with {}",id);
+        Reminder response = reminderService.removeEntry(id);
+        log.info("following entry is removed {}",response);
+        return ResponseEntity.ok(response);
+    }
+
+    /*
+    * implement multiple delete id's post front-end in place and select tick implemented to make multiple delete or edits
+    *
+    */
+
+    @PutMapping("/editById/{id}")
+    public ResponseEntity<Reminder> updateById(@RequestBody Reminder reminder,@PathVariable Long id)
+    {
+        log.info("updating id {} with new values",id);
+        Reminder response = reminderService.updateById(id,reminder);
+        return ResponseEntity.ok(response);
+    }
 }
