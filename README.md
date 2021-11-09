@@ -31,3 +31,9 @@ MS 4
 ------------------
 contact app; new
 
+
+
+resources:
+
+https://developer.okta.com/blog/2018/07/19/simple-crud-react-and-spring-boot //react.js integrate with spring-boot 07th November 2021
+
